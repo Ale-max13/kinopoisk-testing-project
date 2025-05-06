@@ -1,0 +1,307 @@
+{
+	"id": "da741ac8-8c6d-4e9e-84a9-ba94c72ddef0",
+	"name": "Kinopoisk_FP",
+	"timestamp": "2025-04-20T22:28:09.893Z",
+	"collection_id": "41732668-69e38237-e8e2-489a-86e4-b582fd3b0c58",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 7,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-04-20T22:28:06.938Z",
+	"totalFail": 3,
+	"results": [
+		{
+			"id": "a2fb288b-7a4e-4d9e-aea0-6e6d36f7fe60",
+			"name": "TC_1_Поиск фильма на кириллице",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=Оно",
+			"time": 483,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Код ответа 200 или 201": true
+			},
+			"testPassFailCounts": {
+				"Код ответа 200 или 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				483
+			],
+			"allTests": [
+				{
+					"Код ответа 200 или 201": true
+				}
+			]
+		},
+		{
+			"id": "399ef1ae-859e-4b67-a95e-44c24cef1b8d",
+			"name": "TC_2_Поиск фильма по названию на латинице",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=Titanic",
+			"time": 139,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Код ответа 200 или 201": true
+			},
+			"testPassFailCounts": {
+				"Код ответа 200 или 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"Код ответа 200 или 201": true
+				}
+			]
+		},
+		{
+			"id": "3e02c6a0-296d-4cc0-bd07-9a4b2877edd4",
+			"name": "TC_3_Поиск фильма по названию с цифрами",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=127 часов",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Код ответа 200 или 201": true
+			},
+			"testPassFailCounts": {
+				"Код ответа 200 или 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"Код ответа 200 или 201": true
+				}
+			]
+		},
+		{
+			"id": "b6b39201-a706-4655-92ec-ae25a7ab4bb0",
+			"name": "TC_1_Поиск несуществующего фильма",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=ФильмКоторогоНет",
+			"time": 167,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Фильмы не найдены — docs пустой": true
+			},
+			"testPassFailCounts": {
+				"Фильмы не найдены — docs пустой": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				167
+			],
+			"allTests": [
+				{
+					"Фильмы не найдены — docs пустой": true
+				}
+			]
+		},
+		{
+			"id": "5177ba94-7eac-49e1-bc81-19a3580dc945",
+			"name": "TC_2_Поиск фильма с пустым названием",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=",
+			"time": 480,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"docs пустой при пустом query": false
+			},
+			"testPassFailCounts": {
+				"docs пустой при пустом query": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				480
+			],
+			"allTests": [
+				{
+					"docs пустой при пустом query": false
+				}
+			]
+		},
+		{
+			"id": "22347f70-db06-404c-8c8c-6a0b185848c3",
+			"name": "TC_3_Поиск фильма с набором спецсимволов в названии",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=@#$%^&*",
+			"time": 139,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"docs пустой при спецсимволах": false
+			},
+			"testPassFailCounts": {
+				"docs пустой при спецсимволах": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"docs пустой при спецсимволах": false
+				}
+			]
+		},
+		{
+			"id": "0b4c8674-51b3-4380-8f2a-14034c2cbd0e",
+			"name": "TC_4_Поиск фильма с чрезмерно длинным названием",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"time": 131,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"docs пустой при слишком длинном query": true
+			},
+			"testPassFailCounts": {
+				"docs пустой при слишком длинном query": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				131
+			],
+			"allTests": [
+				{
+					"docs пустой при слишком длинном query": true
+				}
+			]
+		},
+		{
+			"id": "731022a1-deee-4417-b81c-34a241adcbd4",
+			"name": "TC_5_Поиск фильма по числовому значению",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=9999999",
+			"time": 139,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"docs пустой при числовом query 9999999": false
+			},
+			"testPassFailCounts": {
+				"docs пустой при числовом query 9999999": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"docs пустой при числовом query 9999999": false
+				}
+			]
+		},
+		{
+			"id": "32385bea-073b-4ab6-b912-d128cd07251a",
+			"name": "TC_6_Отправка запроса без Token",
+			"url": "https://api.kinopoisk.dev/v1.4/movie/search?query=Матрица",
+			"time": 122,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Статус ответа — 401 или 403": true,
+				"Сообщение об ошибке присутствует": true
+			},
+			"testPassFailCounts": {
+				"Статус ответа — 401 или 403": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Сообщение об ошибке присутствует": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				122
+			],
+			"allTests": [
+				{
+					"Статус ответа — 401 или 403": true,
+					"Сообщение об ошибке присутствует": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2012,
+	"collection": {
+		"requests": [
+			{
+				"id": "a2fb288b-7a4e-4d9e-aea0-6e6d36f7fe60",
+				"method": "GET"
+			},
+			{
+				"id": "399ef1ae-859e-4b67-a95e-44c24cef1b8d",
+				"method": "GET"
+			},
+			{
+				"id": "3e02c6a0-296d-4cc0-bd07-9a4b2877edd4",
+				"method": "GET"
+			},
+			{
+				"id": "b6b39201-a706-4655-92ec-ae25a7ab4bb0",
+				"method": "GET"
+			},
+			{
+				"id": "5177ba94-7eac-49e1-bc81-19a3580dc945",
+				"method": "GET"
+			},
+			{
+				"id": "22347f70-db06-404c-8c8c-6a0b185848c3",
+				"method": "GET"
+			},
+			{
+				"id": "0b4c8674-51b3-4380-8f2a-14034c2cbd0e",
+				"method": "GET"
+			},
+			{
+				"id": "731022a1-deee-4417-b81c-34a241adcbd4",
+				"method": "GET"
+			},
+			{
+				"id": "32385bea-073b-4ab6-b912-d128cd07251a",
+				"method": "GET"
+			}
+		]
+	}
+}
